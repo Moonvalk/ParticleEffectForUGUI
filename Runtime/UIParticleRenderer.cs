@@ -463,7 +463,6 @@ namespace Coffee.UIExtensions
             // Update animatable material properties.
             Profiler.BeginSample("[UIParticleRenderer] Update Animatable Material Properties");
 
-#if UNITY_EDITOR
             if (_modifiedMaterial != material)
             {
                 _renderer.GetSharedMaterials(s_Materials);
@@ -471,7 +470,6 @@ namespace Coffee.UIExtensions
                 s_Materials.Clear();
                 SetMaterialDirty();
             }
-#endif
 
             UpdateMaterialProperties();
             if (_parent.useMeshSharing)
